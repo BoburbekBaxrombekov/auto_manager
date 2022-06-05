@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT || 5000
 const mongoose = require('mongoose')
 const bodypar = require('body-parser')
 const cors = require('cors')
@@ -29,4 +30,4 @@ app.use('/', require('./router/car'))
 app.use('/client', require('./router/xaridRoutes'))
 app.use('/admin', require('./router/authRoutes'))
 
-app.listen(5000, console.log('run server 5000 port'))
+app.listen(PORT, console.log(`run server ${PORT} port`))
